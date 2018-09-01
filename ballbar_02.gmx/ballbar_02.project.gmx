@@ -19,6 +19,9 @@
     <background>background\bg_green</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\approach.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_bar</object>
     <object>objects\obj_ball</object>

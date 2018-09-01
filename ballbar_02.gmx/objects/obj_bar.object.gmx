@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>rotSp=4
+            <string>maxRotSp=4
+rotSp=0
+accRotSp=0.2
+decRotSp=0.1
 </string>
           </argument>
         </arguments>
@@ -48,8 +51,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>rot=keyboard_check(ord("A"))-keyboard_check(ord("D"))
-image_angle+=((rot*rotSp)+360) mod 360
+            <string>rot=(keyboard_check(ord("A"))-keyboard_check(ord("D")))*accRotSp
+rotSp=approach(rotSp,0,decRotSp)
+rotSp=clamp(rotSp+rot,-maxRotSp,maxRotSp)
+image_angle=(image_angle+rotSp+360) mod 360
 </string>
           </argument>
         </arguments>
